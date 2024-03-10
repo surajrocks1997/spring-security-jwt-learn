@@ -11,6 +11,9 @@ spring:
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+jwt:
+  secret_key: ef79f16ae6b0e2029c65709f3deaf4a7cf68584f81f4c451c58eeac45b3cd82c
+
 
 #spring.jpa.hibernate.ddl-auto=update
 #spring.datasource.url=jdbc:mysql://localhost:3306/spring_security_jwt
