@@ -38,12 +38,12 @@ public class AuthenticationService {
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
+                        request.getEmailId(),
                         request.getPassword()
                 )
         );
 
-        var user = userRepository.findByEmailId(request.getEmail()).orElseThrow();
+        var user = userRepository.findByEmailId(request.getEmailId()).orElseThrow();
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
